@@ -34,7 +34,7 @@ export default function App() {
   }
 
   const router = createBrowserRouter([
-    { path: "/", element: <Layout user={user} logout={logout} auth={auth}/>, children:[
+    { path: "/", element: <Login user={user} logout={logout} auth={auth}/>, children:[
       { path: "/login", element: <Login auth={auth} setUser={setUser} /> },
       { path: "*", element: <Notfound /> }
     ]}
