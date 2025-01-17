@@ -80,5 +80,6 @@ export default function Register({auth}) {
         Already have an account? Log in
       </Button>
     </div>
+    
   );
 }

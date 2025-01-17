@@ -1,5 +1,6 @@
 .app {
-  width: 90%; margin: 0px auto;
+  width: 120%; margin: 0px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .menu {
@@ -23,6 +24,7 @@
 }
 
 .login {
+  text-align: center;
   display: flex; gap: 15px; flex-direction: column;
   width: 100%;
   max-width: 400px;
@@ -36,8 +38,8 @@
   width: 100px;
 }
 .signup{
-
   justify-content: space-between;
+  text-align: center;
   margin-bottom: 10px;
   width: 100%;
   max-width: 400px;
@@ -45,4 +47,28 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.ps{
+  margin-left: 10px;   
+  font-size: 20px;
+  color: rgb(49, 135, 206);
+  text-decoration: none;}
+
+.login .pp{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.login .pp:hover{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.login Button{
+    width: 100%;
+   background-color: rgba(39, 68, 230, 0.76);
+}
+h1{padding: 0px; margin: 0px;}

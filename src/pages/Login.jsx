@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, TextField } from '@mui/material'
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login({ auth, setUser }) {
 
@@ -27,6 +27,7 @@ export default function Login({ auth, setUser }) {
 
   return (
     <div className='login'>
+      <h1>Login</h1>
       <TextField
         error={loginError}
         required
@@ -47,13 +48,12 @@ export default function Login({ auth, setUser }) {
         color="success"
         onClick={login}
       >Login</Button>
-
-      <Button
-        variant="contained"
-        onClick={() => navigate('/signup')}
-      >
+    <p className='pp'>Don't have an account? 
+      <Link className='ps' to={"/signup"}>
         Sign up
-      </Button>
+      </Link>
+      </p>
+
     </div>
   )
 }
