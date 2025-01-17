@@ -2,19 +2,15 @@ import './App.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Messages from './pages/Messages.jsx'
-import Users from './pages/Users.jsx'
-import About from './pages/About.jsx'
 import Login from './pages/Login.jsx'
 import Notfound from './pages/Notfound.jsx'
 
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./firebaseConfig.js";
+import { firebaseConfig } from "../firebaseConfig.js";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { useState } from 'react'
-import Layout from './Layout.jsx'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import SignUp from './pages/SignUp.jsx'
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
@@ -22,27 +18,26 @@ export const auth = getAuth(app);
 
 export default function App() {
 
-  const [user, setUser] = useState("Bela");
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => setUser(currentUser));
-    return () => unsubscribe;
-  },[]);
+    return () => unsubscribe();
+  }, []);
 
   async function logout() {
     await signOut(auth);  
   }
 
   const router = createBrowserRouter([
-    { path: "/", element: <Login user={user} logout={logout} auth={auth}/>, children:[
-      { path: "/login", element: <Login auth={auth} setUser={setUser} /> },
-      { path: "*", element: <Notfound /> }
-    ]}
+    { path: "/", element: <Login auth={auth} setUser={setUser} /> },
+    { path: "/signup", element: <SignUp auth={auth} /> },
+    { path: "*", element: <Notfound /> }
   ]);
   
-   return (
+  return (
     <div className='app'> 
       <RouterProvider router={router} />
     </div>
-   )
+  );
 }
