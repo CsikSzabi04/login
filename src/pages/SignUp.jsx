@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import '../App.css'
 
 export default function Register({auth}) {
   const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ export default function Register({auth}) {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
+    <div className='signup' style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
       <Typography variant="h4" gutterBottom>
         Register
       </Typography>
