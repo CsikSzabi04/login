@@ -33,10 +33,12 @@
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+.login .tf{background-color: white; border-radius: 5px;}
 .login Button {
   text-transform: none;
   width: 100px;
 }
+.login p{float: left; padding: 0px; margin: 0px; margin-left: 2%; color: grey; font-size: small;}
 .signup{
   justify-content: space-between;
   text-align: center;
@@ -49,6 +51,10 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.signup h4{margin: 0px; padding: 0px;}
+
+.signup .tf{background-color: white; border-radius: 5px;}
+
 .ps{
   margin-left: 10px;   
   font-size: 20px;

@@ -6,6 +6,7 @@ import '../App.css'
 
 export default function Register({auth}) {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -32,12 +33,22 @@ export default function Register({auth}) {
   return (
     <div className='signup' style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
       <Typography variant="h4" gutterBottom>
-        Register
+        <h4>Register</h4> 
       </Typography>
       {success && <Typography color="green">Account created successfully!</Typography>}
       {error && <Typography color="error">{error}</Typography>}
       <TextField
         fullWidth
+        className='tf'
+        margin="normal"
+        label="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        error={!!error}
+      />
+      <TextField
+        fullWidth
+        className='tf'
         margin="normal"
         label="Email"
         value={email}
@@ -46,6 +57,7 @@ export default function Register({auth}) {
       />
       <TextField
         fullWidth
+        className='tf'
         margin="normal"
         label="Password"
         type="password"
@@ -55,6 +67,7 @@ export default function Register({auth}) {
       />
       <TextField
         fullWidth
+         className='tf'
         margin="normal"
         label="Confirm Password"
         type="password"

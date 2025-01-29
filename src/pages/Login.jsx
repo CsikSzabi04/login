@@ -30,6 +30,7 @@ export default function Login({ auth, setUser }) {
       <h1>Login</h1>
       <TextField
         error={loginError}
+        className='tf'
         required
         label="Email"
         value={email}
@@ -38,11 +39,13 @@ export default function Login({ auth, setUser }) {
       <TextField
         required
         label="Password"
+        className='tf'
         type="password"
         value={password}
         onChange={e => setPassword(e.target.value)}
-        helperText={loginError ? "Wrong username or password!" : "Please Login!"}
+        
       />
+      <div> <p>{loginError ? "Wrong username or password!" : "Please Login!"}</p> </div>     
       <Button
         variant="contained"
         color="success"
