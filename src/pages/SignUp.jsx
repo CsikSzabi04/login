@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
+import { firestore } from '../../firebaseConfig.js'; 
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
 
@@ -22,6 +24,7 @@ export default function Register({auth}) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       setSuccess(true);
+      await addDoc(collection(firestore, "usernames"), { username });
       setError('');
       setTimeout(() => navigate('/login'), 2000); 
     } catch (err) {

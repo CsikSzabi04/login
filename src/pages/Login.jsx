@@ -14,7 +14,7 @@ export default function Login({ auth, setUser }) {
   async function login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      setEmail(""); setPassword("");
+      setEmail(); setPassword("");
       setLoginError(false);
 
       window.location.href = "https://csikszabi04.github.io/stats";
